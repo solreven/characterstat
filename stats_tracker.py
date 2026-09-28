@@ -4,3 +4,17 @@ class GameCharacter:
         self._health = 100
         self._mana = 50
         self._level = 1
+    def name(self):
+        return self._name
+    @property
+    def health(self):
+        return self._health
+    @health.setter
+    def health(self, health):
+        if health < 0:
+            self._health = 0
+        if health > 100:
+            self._health = 100
+        if health >= 0 and health <= 100:
+            self._health = health
+        return self._health
