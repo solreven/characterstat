@@ -4,6 +4,7 @@ class GameCharacter:
         self._health = 100
         self._mana = 50
         self._level = 1
+    @property
     def name(self):
         return self._name
     @property
@@ -18,3 +19,15 @@ class GameCharacter:
         if health >= 0 and health <= 100:
             self._health = health
         return self._health
+    @property
+    def mana(self):
+        return self._mana
+    @mana.setter
+    def mana(self, mana):
+        if mana < 0:
+            self._mana = 0
+        if mana > 50:
+            self._mana = 50
+        if mana >= 0 and mana <= 50:
+            self._mana = mana
+        return self._mana
