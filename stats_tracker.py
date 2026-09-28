@@ -31,3 +31,13 @@ class GameCharacter:
         if mana >= 0 and mana <= 50:
             self._mana = mana
         return self._mana
+    @property
+    def level(self):
+        return self._level
+    def level_up(self):
+        self._level += 1
+        self.health = 100
+        self.mana = 50
+        print(f'{self.name} leveled up to {self.level}!')
+    def __str__(self):
+        return f'Name: {self.name}\nLevel: {self.level}\nHealth: {self.health}\nMana: {self.mana}'
